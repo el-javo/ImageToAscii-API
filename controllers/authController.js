@@ -140,4 +140,5 @@ const showMe = (req, res)=>{
     res.status(StatusCodes.OK).json({msg:`hi ${req.user.name}`})
 }
 
+
 module.exports = {login,register,logout,verifyEmail,resetPassword,forgotPassword, showMe}
