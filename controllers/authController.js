@@ -42,7 +42,6 @@ const login = async (req, res)=>{
         attachCookiesToResponse({res, user: tokenUser, refreshToken})
         res.status(StatusCodes.OK).json({msg:`Logged In: Welcome ${user.name}`})
     }
-    
 }
 
 const register = async (req, res)=>{
