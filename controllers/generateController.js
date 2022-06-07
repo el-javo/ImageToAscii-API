@@ -8,6 +8,10 @@ const cloudinary = require('cloudinary').v2
 const fs = require('fs');
 
 const generate = async (req,res)=>{
+    // for running the python file
+    let py = ''
+    if(process.env.PYTHON == 3)py='3'
+
     const {image} = req.files
     let {invert, resolution, name, format,contrast,description,replace, backgroundColor, fontColor, upload} = req.body
     if(!format||!image){
@@ -54,7 +58,7 @@ const generate = async (req,res)=>{
     await image.mv(imgPath)
     //run the py with all params
     const strinvert = invert ? 'true':'false'
-    const command = `python py/ImageToAsciiOP.py py/in/imgin.jpg py/out/canvas.txt ${resolution} ${contrast} ${strinvert}`
+    const command = `python${py} py/ImageToAsciiOP.py py/in/imgin.jpg py/out/canvas.txt ${resolution} ${contrast} ${strinvert}`
     const img2ascii = await exec(command)
     let url = 'not defined'
 
@@ -68,7 +72,7 @@ const generate = async (req,res)=>{
     }
     if(format == 'img'){
         //txt -> jpg
-        const command = `python py/asciiToImage.py py/out/canvas.txt py/out/canvas.jpg ${backgroundColor[0]} ${backgroundColor[1]} ${backgroundColor[2]} ${fontColor[0]} ${fontColor[1]} ${fontColor[2]}`
+        const command = `python${py} py/asciiToImage.py py/out/canvas.txt py/out/canvas.jpg ${backgroundColor[0]} ${backgroundColor[1]} ${backgroundColor[2]} ${fontColor[0]} ${fontColor[1]} ${fontColor[2]}`
         const asciiToImage = await exec(command)
         //upload the jpg to the platform
         if(upload){
