@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "2361e7ca-9537-49fe-9152-364846a27100",
+		"name": "Image2Ascii",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20345701"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"eljavo@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"eljavo\",\r\n    \"email\":\"eljavo@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/verify-email?token=1b04d31b9df8b8322d3dc1d47f37d840f211a4e8be8429be28ee1cb53726fef7afff312852f48cbf&email=eljavo@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "1b04d31b9df8b8322d3dc1d47f37d840f211a4e8be8429be28ee1cb53726fef7afff312852f48cbf"
+								},
+								{
+									"key": "email",
+									"value": "eljavo@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "generations",
+			"item": [
+				{
+					"name": "getGenerations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/generations",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"generations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllGenerations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/generations/allGens",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"generations",
+								"allGens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateGen",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/generations/316125364846552613",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"generations",
+								"316125364846552613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGeneration",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/generations/31561661315646",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"generations",
+								"31561661315646"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "generate",
+			"item": [
+				{
+					"name": "generateImg",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "format",
+									"value": "txt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/MADV.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "madvillian2",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.7",
+									"type": "text"
+								},
+								{
+									"key": "replace",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "255",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "255",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "255",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "the fatass madvillian a fucking god but inverted",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/gen/generateImg",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateImg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateTxt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "modus",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.4",
+									"type": "text"
+								},
+								{
+									"key": "replace",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "format",
+									"value": "txt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "the robot from modus",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/gen/generateTxt",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateTxt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateImgNoUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.5",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "216",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "075",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "032",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.35",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/gen/generateImgNoUp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateImgNoUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateTxtNoUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.5",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/gen/generateTxtNoUp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateTxtNoUp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dummy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

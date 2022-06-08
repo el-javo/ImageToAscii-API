@@ -49,6 +49,7 @@ app.use(express.json())
 app.use(morgan('tiny'))
 app.use(fileUpload())
 app.use(cookieParser(process.env.JWT_SECRET))
+app.use(express.static('./public'))
 //routing
 app.get('/',(req,res)=>{
     res.send('img2Ascii')
