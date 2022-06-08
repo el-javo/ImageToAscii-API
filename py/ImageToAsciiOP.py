@@ -84,7 +84,7 @@ def getPincelSimple(pincel):
 def getPincelOp(invert = False):
     blkP =[]
     number = []
-    for x in range(61,145):
+    for x in range(61,143):
         blkP.append(porcentajeNegro('fonts/'+str(x)+'.jpg', invert))
 
     norm = []
@@ -94,7 +94,7 @@ def getPincelOp(invert = False):
         aux = aux * 255
         norm.append(aux)
 
-    chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','r','s','t','u','v','w','x','y','z','{','|','}','~','!','"','#','$','%','&','(','*','+','.','/','1','2','3','4','5','6','7','8','9','@',';',':','>','?','A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z']      
+    chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','r','s','t','u','v','w','x','y','z','{','|','}','~','!','"','#','$','%','&','(','*','+','.','/','1','2','3','4','5','6','7','8','9','@',';',':','>','?','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']      
     pincel = np.vstack((norm,chars))
     norm = np.array(norm)
     pincel[0]=pincel[0][norm.argsort()]

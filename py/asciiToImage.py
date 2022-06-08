@@ -19,7 +19,7 @@ def asciiToImg(txt_path, out_path, background_color = (255,255,255), font_color 
     ratioCH = 34
 
     blankImg = Image.new('RGB',(charW*ratioCW,charH*ratioCH), background_color)
-    font = ImageFont.truetype('consola', 30)
+    font = ImageFont.truetype('fonts/consola.ttf', 30)
     draw = ImageDraw.Draw(blankImg)
 
     for line,i in zip(file.splitlines(),range(0,len(file.splitlines()))):
