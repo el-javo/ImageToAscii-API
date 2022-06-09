@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"eljavo@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"email\":\"example@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"eljavo\",\r\n    \"email\":\"eljavo@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Don Pepito\",\r\n    \"email\":\"example@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,7 +96,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/v1/auth/verify-email?token=1b04d31b9df8b8322d3dc1d47f37d840f211a4e8be8429be28ee1cb53726fef7afff312852f48cbf&email=eljavo@gmail.com",
+							"raw": "http://localhost:5000/api/v1/auth/verify-email?token=1b04d31b9df8b8322d3dc1d47f37d840f211a4e8be8429be28ee1cb53726fef7afff312852f48cbf&email=example@gmail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -115,7 +115,7 @@
 								},
 								{
 									"key": "email",
-									"value": "eljavo@gmail.com"
+									"value": "example@gmail.com"
 								}
 							]
 						}
@@ -133,7 +133,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/v1/generations",
+							"raw": "localhost:5000/api/v1/generations?name=ball&invert=false&format=img&search=album",
 							"host": [
 								"localhost"
 							],
@@ -142,6 +142,24 @@
 								"api",
 								"v1",
 								"generations"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ball"
+								},
+								{
+									"key": "invert",
+									"value": "false"
+								},
+								{
+									"key": "format",
+									"value": "img"
+								},
+								{
+									"key": "search",
+									"value": "album"
+								}
 							]
 						}
 					},
@@ -173,8 +191,17 @@
 					"request": {
 						"method": "PATCH",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"madvillian II\",\r\n    \"description\": \"i like mf doom\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "localhost:5000/api/v1/generations/316125364846552613",
+							"raw": "localhost:5000/api/v1/generations/629b4a890c60114d7ee4cb77",
 							"host": [
 								"localhost"
 							],
@@ -183,7 +210,7 @@
 								"api",
 								"v1",
 								"generations",
-								"316125364846552613"
+								"629b4a890c60114d7ee4cb77"
 							]
 						}
 					},
@@ -195,7 +222,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/v1/generations/31561661315646",
+							"raw": "localhost:5000/api/v1/generations/629666710219f6ec2c6be246",
 							"host": [
 								"localhost"
 							],
@@ -204,7 +231,7 @@
 								"api",
 								"v1",
 								"generations",
-								"31561661315646"
+								"629666710219f6ec2c6be246"
 							]
 						}
 					},
@@ -232,7 +259,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/MADV.jpg"
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
 								},
 								{
 									"key": "invert",
@@ -434,7 +461,7 @@
 								},
 								{
 									"key": "resolution",
-									"value": "0.35",
+									"value": "0.1",
 									"type": "text"
 								}
 							]
@@ -502,24 +529,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "dummy",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }

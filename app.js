@@ -52,7 +52,7 @@ app.use(cookieParser(process.env.JWT_SECRET))
 app.use(express.static('./public'))
 //routing
 app.get('/',(req,res)=>{
-    res.send('img2Ascii')
+    res.send('<h1>Image2Ascii</h1><a href = "http://localhost:5000/docs/">docs</a>')
 })
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/gen',genRouter )
