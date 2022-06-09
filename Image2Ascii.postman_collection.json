@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"example@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -35,7 +35,8 @@
 								"auth",
 								"login"
 							]
-						}
+						},
+						"description": "log in the API with your email and password."
 					},
 					"response": []
 				},
@@ -65,7 +66,8 @@
 								"auth",
 								"register"
 							]
-						}
+						},
+						"description": "Register in the API with your name, email and password.\n\nThen take a look to your mail to verify your account. Don't forget to check the spam folder."
 					},
 					"response": []
 				},
@@ -86,7 +88,8 @@
 								"auth",
 								"logout"
 							]
-						}
+						},
+						"description": "simplemente logout"
 					},
 					"response": []
 				},
@@ -118,7 +121,8 @@
 									"value": "example@gmail.com"
 								}
 							]
-						}
+						},
+						"description": "esta direccion es de uso interno para verificar tu email"
 					},
 					"response": []
 				}
@@ -161,7 +165,8 @@
 									"value": "album"
 								}
 							]
-						}
+						},
+						"description": "Once logged get an array to get all the generations u made via upload. U can also make a query to filter your generations."
 					},
 					"response": []
 				},
@@ -182,7 +187,8 @@
 								"generations",
 								"allGens"
 							]
-						}
+						},
+						"description": "This is for admin only, it retunrs an array with all the generations of all users."
 					},
 					"response": []
 				},
@@ -212,7 +218,8 @@
 								"generations",
 								"629b4a890c60114d7ee4cb77"
 							]
-						}
+						},
+						"description": "Update name or description of one of your generations"
 					},
 					"response": []
 				},
@@ -233,7 +240,8 @@
 								"generations",
 								"629666710219f6ec2c6be246"
 							]
-						}
+						},
+						"description": "Delete one of your generations"
 					},
 					"response": []
 				}
@@ -335,7 +343,8 @@
 								"gen",
 								"generateImg"
 							]
-						}
+						},
+						"description": "Generate an image (.jpg) and save it into your account."
 					},
 					"response": []
 				},
@@ -402,7 +411,8 @@
 								"gen",
 								"generateTxt"
 							]
-						}
+						},
+						"description": "Generate an image (.txt) and save it into your account"
 					},
 					"response": []
 				},
@@ -478,7 +488,8 @@
 								"gen",
 								"generateImgNoUp"
 							]
-						}
+						},
+						"description": "Generate an image (.jpg) and get it directly as a return. This is a better option when the output file is too large to be saved to your account"
 					},
 					"response": []
 				},
@@ -524,7 +535,8 @@
 								"gen",
 								"generateTxtNoUp"
 							]
-						}
+						},
+						"description": "Generate an image (.txt) and get it directly as a return. This is a better option when the output file is too large to be saved to your account"
 					},
 					"response": []
 				}

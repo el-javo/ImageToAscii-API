@@ -8452,9 +8452,12 @@
                                     </div>
                                     <div id=collapse-auth-login class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>log in the API with your email and password.
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                                                &#34;email&#34;:&#34;example@gmail.com&#34;,
-                                                &#34;password&#34;:&#34;123456&#34;
+                                                &#34;email&#34;: &#34;example@gmail.com&#34;,
+                                                &#34;password&#34;: &#34;123456&#34;
                                                 }</span>
                                             <div class=clearfix></div>
                                         </div>
@@ -8475,6 +8478,11 @@
                                     </div>
                                     <div id=collapse-auth-register class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Register in the API with your name, email and password.
+                                                <p>Then take a look to your mail to verify your account. Don&rsquo;t
+                                                    forget to check the spam folder.
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
                                                 &#34;name&#34;:&#34;Don Pepito&#34;,
                                                 &#34;email&#34;:&#34;example@gmail.com&#34;,
@@ -8497,7 +8505,11 @@
                                             </h4>
                                         </a></div>
                                     <div id=collapse-auth-logout class="panel-collapse collapse">
-                                        <div class=panel-body></div>
+                                        <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>simplemente logout
+                                            </small><br><br>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-info" id=jump-auth-verify>
@@ -8514,6 +8526,9 @@
                                         </a></div>
                                     <div id=collapse-auth-verify class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>esta direccion es de uso interno para verificar tu email
+                                            </small><br><br>
                                             <h5 class="label label-info">Query</h5>
                                             <table class="table table-hover">
                                                 <thead>
@@ -8562,6 +8577,10 @@
                                         </a></div>
                                     <div id=collapse-generations-getGenerations class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Once logged get an array to get all the generations u made via
+                                                    upload. U can also make a query to filter your generations.
+                                            </small><br><br>
                                             <h5 class="label label-info">Query</h5>
                                             <table class="table table-hover">
                                                 <thead>
@@ -8603,7 +8622,12 @@
                                             </h4>
                                         </a></div>
                                     <div id=collapse-generations-getAllGenerations class="panel-collapse collapse">
-                                        <div class=panel-body></div>
+                                        <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>This is for admin only, it retunrs an array with all the generations
+                                                    of all users.
+                                            </small><br><br>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-warning" id=jump-generations-updateGen>
@@ -8621,6 +8645,9 @@
                                     </div>
                                     <div id=collapse-generations-updateGen class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Update name or description of one of your generations
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
                                                 &#34;name&#34;:&#34;madvillian II&#34;,
                                                 &#34;description&#34;: &#34;i like mf doom&#34;
@@ -8642,7 +8669,11 @@
                                             </h4>
                                         </a></div>
                                     <div id=collapse-generations-deleteGeneration class="panel-collapse collapse">
-                                        <div class=panel-body></div>
+                                        <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Delete one of your generations
+                                            </small><br><br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -8674,6 +8705,9 @@
                                     </div>
                                     <div id=collapse-generate-generateImg class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Generate an image (.jpg) and save it into your account.
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5>
                                             <table class="table table-hover">
                                                 <thead>
@@ -8753,6 +8787,9 @@
                                     </div>
                                     <div id=collapse-generate-generateTxt class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Generate an image (.txt) and save it into your account
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5>
                                             <table class="table table-hover">
                                                 <thead>
@@ -8808,6 +8845,11 @@
                                     </div>
                                     <div id=collapse-generate-generateImgNoUp class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Generate an image (.jpg) and get it directly as a return. This is a
+                                                    better option when the output file is too large to be saved to your
+                                                    account
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5>
                                             <table class="table table-hover">
                                                 <thead>
@@ -8875,6 +8917,11 @@
                                     </div>
                                     <div id=collapse-generate-generateTxtNoUp class="panel-collapse collapse">
                                         <div class=panel-body>
+                                            <h5 class="label label-default">Description</h5><br><small>
+                                                <p>Generate an image (.txt) and get it directly as a return. This is a
+                                                    better option when the output file is too large to be saved to your
+                                                    account
+                                            </small><br><br>
                                             <h5 class="label label-primary">Body</h5>
                                             <table class="table table-hover">
                                                 <thead>
@@ -8916,7 +8963,7 @@
         <div class=container-fluid>
             <div class="span12 text-center"><span data-toggle=tooltip
                     title="If the application help you, please feel free to give a star to the project in github. Your star inspire me to work more on open-source projects like this!">Generated
-                    at 2022-06-09 11:29:06 by <a href=https://github.com/thedevsaddam/docgen target=_blank
+                    at 2022-06-09 11:49:24 by <a href=https://github.com/thedevsaddam/docgen target=_blank
                         class=text-muted>docgen</a></span></div>
         </div>
     </footer>
