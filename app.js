@@ -20,7 +20,8 @@ const cookieParser = require('cookie-parser')
 //routers
 const authRouter = require('./routes/authRoutes')
 const genRouter = require('./routes/generateRoutes')
-const gensRouter = require('./routes/generationsRoutes')
+const gensRouter = require('./routes/generationsRoutes');
+const { PROCESSING } = require('http-status-codes');
 //cloudinary
 const cloudinary = require('cloudinary').v2
 cloudinary.config({
@@ -52,7 +53,11 @@ app.use(cookieParser(process.env.JWT_SECRET))
 app.use(express.static('./public'))
 //routing
 app.get('/',(req,res)=>{
-    res.send('<h1>Image2Ascii</h1><a href = "http://localhost:5000/docs/">docs</a>')
+    if(process.env.PRODUCTION == 'true'){
+        res.send('<h1>Image2Ascii</h1><a href = `${process.env.ORIGIN_BACK}/docs/`>docs</a>')
+    }else{
+        res.send('<h1>Image2Ascii</h1><a href = `http://localhost:${process.env.PORT}/docs/`>docs</a>')
+    }
 })
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/gen',genRouter )

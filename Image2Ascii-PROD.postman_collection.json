@@ -1,0 +1,581 @@
+{
+	"info": {
+		"_postman_id": "bb7c6bb7-4a76-4c66-9c91-1c36a706738d",
+		"name": "Image2Ascii-PROD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20345701"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"example@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "log in the API with your email and password."
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Don Pepito\",\r\n    \"email\":\"example@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/auth/register",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						},
+						"description": "Register in the API with your name, email and password.\n\nThen take a look to your mail to verify your account. Don't forget to check the spam folder."
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/auth/logout",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "simplemente logout"
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/auth/verify-email?token=1b04d31b9df8b8322d3dc1d47f37d840f211a4e8be8429be28ee1cb53726fef7afff312852f48cbf&email=example@gmail.com",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "1b04d31b9df8b8322d3dc1d47f37d840f211a4e8be8429be28ee1cb53726fef7afff312852f48cbf"
+								},
+								{
+									"key": "email",
+									"value": "example@gmail.com"
+								}
+							]
+						},
+						"description": "esta direccion es de uso interno para verificar tu email"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "generations",
+			"item": [
+				{
+					"name": "getGenerations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/generations?name=ball&invert=false&format=img&search=album",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"generations"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ball"
+								},
+								{
+									"key": "invert",
+									"value": "false"
+								},
+								{
+									"key": "format",
+									"value": "img"
+								},
+								{
+									"key": "search",
+									"value": "album"
+								}
+							]
+						},
+						"description": "Once logged get an array to get all the generations u made via upload. U can also make a query to filter your generations."
+					},
+					"response": []
+				},
+				{
+					"name": "getAllGenerations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/generations/allGens",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"generations",
+								"allGens"
+							]
+						},
+						"description": "This is for admin only, it retunrs an array with all the generations of all users."
+					},
+					"response": []
+				},
+				{
+					"name": "updateGen",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"madvillian II\",\r\n    \"description\": \"i like mf doom\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/generations/629b4a890c60114d7ee4cb77",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"generations",
+								"629b4a890c60114d7ee4cb77"
+							]
+						},
+						"description": "Update name or description of one of your generations"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGeneration",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/generations/629666710219f6ec2c6be246",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"generations",
+								"629666710219f6ec2c6be246"
+							]
+						},
+						"description": "Delete one of your generations"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "generate",
+			"item": [
+				{
+					"name": "generateImg",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "format",
+									"value": "txt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "madvillian2",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.7",
+									"type": "text"
+								},
+								{
+									"key": "replace",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "255",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "255",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "255",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "the fatass madvillian a fucking god but inverted",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/gen/generateImg",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateImg"
+							]
+						},
+						"description": "Generate an image (.jpg) and save it into your account."
+					},
+					"response": []
+				},
+				{
+					"name": "generateTxt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "modus",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.4",
+									"type": "text"
+								},
+								{
+									"key": "replace",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "format",
+									"value": "txt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "the robot from modus",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/gen/generateTxt",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateTxt"
+							]
+						},
+						"description": "Generate an image (.txt) and save it into your account"
+					},
+					"response": []
+				},
+				{
+					"name": "generateImgNoUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.5",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "216",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "075",
+									"type": "text"
+								},
+								{
+									"key": "backgroundColor",
+									"value": "032",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "fontColor",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/gen/generateImgNoUp",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateImgNoUp"
+							]
+						},
+						"description": "Generate an image (.jpg) and get it directly as a return. This is a better option when the output file is too large to be saved to your account"
+					},
+					"response": []
+				},
+				{
+					"name": "generateTxtNoUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/javim/Desktop/Mis Proyectos/image2Ascii-API/py/in/modus.jpg"
+								},
+								{
+									"key": "invert",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "contrast",
+									"value": "1.5",
+									"type": "text"
+								},
+								{
+									"key": "resolution",
+									"value": "0.1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://imagetoascii-api-production.up.railway.app/api/v1/gen/generateTxtNoUp",
+							"protocol": "https",
+							"host": [
+								"imagetoascii-api-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"gen",
+								"generateTxtNoUp"
+							]
+						},
+						"description": "Generate an image (.txt) and get it directly as a return. This is a better option when the output file is too large to be saved to your account"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
