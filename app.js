@@ -51,13 +51,12 @@ app.use(morgan('tiny'))
 app.use(fileUpload())
 app.use(cookieParser(process.env.JWT_SECRET))
 app.use(express.static('./public'))
+
+const port = process.env.PORT||5000
+
 //routing
 app.get('/',(req,res)=>{
-    if(process.env.PRODUCTION == 'true'){
-        res.send('<h1>Image2Ascii</h1><a href = `${process.env.ORIGIN_BACK}/docs/`>docs</a>')
-    }else{
-        res.send('<h1>Image2Ascii</h1><a href = `http://localhost:${process.env.PORT}/docs/`>docs</a>')
-    }
+    res.send('<h1>Image2Ascii</h1><a href = "docs">docs</a>')
 })
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/gen',genRouter )
@@ -66,7 +65,6 @@ app.use('/api/v1/generations', gensRouter)
 app.use(notFound)
 app.use(errorHandler)
 
-const port = process.env.PORT||5000
 
 const start = async ()=>{
     await connectDB(process.env.MONGO_URI)
