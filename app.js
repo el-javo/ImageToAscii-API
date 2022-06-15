@@ -55,9 +55,6 @@ app.use(express.static('./public'))
 const port = process.env.PORT||5000
 
 //routing
-app.get('/',(req,res)=>{
-    res.send('<h1>Image2Ascii</h1><a href = "docs">docs</a>')
-})
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/gen',genRouter )
 app.use('/api/v1/generations', gensRouter)
