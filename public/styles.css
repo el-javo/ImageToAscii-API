@@ -1,15 +1,16 @@
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
     font-family: 'Consolas', monospace;
     scroll-behavior: smooth;
+    background: #0d0d0f;
+    background: linear-gradient(to right, #232235, #23152f);
+    
 }
 
 .hero {
-    background: #0d0d0f;
-    background: linear-gradient(to right, #232235, #23152f);
     padding: 50px 0;
+    margin:20px;
 }
 
 .hero__container {
@@ -38,7 +39,7 @@
 
 
 .image {
-    margin : 20px;
+    margin : 10px;
     border-radius: 6px;
     width: 300px;
     height: 300px;
@@ -48,41 +49,50 @@
 .description {
     font-size: 20px;
     background: #ffffff;
-    background: -webkit-linear-gradient(to right, #ffffff, #f6cbff);
-    background: linear-gradient(to right, #ffffff, #f6cbff);
+    background: -webkit-linear-gradient(to right, #ffffff, #f8dffd);
+    background: linear-gradient(to right, #ffffff, #f8dffd);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin-bottom: 0;
+}
+
+.docs_btn {
+    border: none;
+    background: #ff7301;
+    background: -webkit-linear-gradient(to right, #ffffff, #ffffff,#ff7301);
+    background: linear-gradient(to right, #ffffff, #ffffff, #ff7301);
+    height: 35px;
+    width: 120px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    margin: 25px;
+    transition: all 0.5s ease;
+}
+
+.docs_span{
+    font-size: 200%;
+    background: #000000;
+    background: -webkit-linear-gradient(to right,#ff7301, #d8790b);
+    background: linear-gradient(to right, #ff7301, #d8790b);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
-.docs_btn {
-    font-size: 30px;
-    margin : 30px;
-    height : 50px;
-    width: 120px;
-    border-radius: 10px;
+
+#docsbtn:hover {
+    font-size: 130%;
+    height: calc(35px*1.5);
+    width: calc(120px*1.2);
+    margin-top:calc(25px - (35px*0.5)/2);
+    margin-bottom: calc(25px - (35px*0.5)/2);
+    border-radius: calc(5px * 1.5);
     justify-content: center;
     align-items: center;
-    background: #2f2b3f;
-    background:  -webkit-linear-gradient(to right, #3b3b3b, #34323a, #6f6b86 );
-    background:  linear-gradient(to right, #3b3b3b, #34323a, #6f6b86 );
-    color: #fff;
-
-}
-
-.docs_btn:hover{
-    font-size: 35px;
-    margin : 30px;
-    height : 57px;
-    width: 130px;
-    border-radius: 12px;
-    justify-content: center;
-    align-items: center;
-    background: #2f2b3f;
-    background:  -webkit-linear-gradient(to right, #2e2f38, #544e64, #ffffff );
-    background:  linear-gradient(to right, #2e2f38, #544e64, #ffffff );
-    color: #1c1e23;
     transition: all 0.5s ease;
 }
 
@@ -94,3 +104,28 @@
         font-size: 40px;
     }
 }
+
+.img2ascii {
+    max-width: 650px;
+    text-align: left;
+    margin-left: 60px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    font-size: 5px;
+    color: aliceblue;
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 6.5s steps(100, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
