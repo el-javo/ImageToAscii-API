@@ -9,8 +9,9 @@
 }
 
 .hero {
-    padding: 50px 0;
-    margin:20px;
+    padding: 0px 0;
+    margin:0px;
+    top: 0
 }
 
 .hero__container {
@@ -35,6 +36,7 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+    margin-top: 5;
 }
 
 
@@ -108,7 +110,7 @@
 .img2ascii {
     max-width: 650px;
     text-align: left;
-    margin-left: 60px;
+    margin-left: 65px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     font-size: 5px;
     color: aliceblue;
