@@ -41,6 +41,18 @@
     margin-top: 5;
 }
 
+#verification_heading{
+    font-size: 50px;
+}
+
+.emoji{
+    background: transparent;
+    -webkit-background-clip: initial;
+    -moz-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    -moz-text-fill-color: initial;
+    font-size: 100px;
+}
 
 .image {
     cursor: pointer;

@@ -4,6 +4,8 @@ const crypto = require('crypto')
 const CustomError = require('../errors')
 const Token = require("../models/Token")
 const { StatusCodes } = require("http-status-codes")
+const path = require('path')
+const { resolve } = require("path")
 
 
 const login = async (req, res)=>{
@@ -77,7 +79,8 @@ const verifyEmail = async (req,res) =>{
     user.verificationToken = null
     await user.validate()
     await user.save()
-    res.status(StatusCodes.OK).send(`<h2>Congrats ${user.name}, account verified</h2>`)
+    const verificationPath = resolve('../public/verification.html')
+    res.status(StatusCodes.OK).sendFile(verificationPath)
 }
 const forgotPassword = async (req,res)=>{
     //recibe front para modelar el comportamiento y el link si es para uso de front+api o solo api
