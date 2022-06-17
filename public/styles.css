@@ -11,7 +11,8 @@
 .hero {
     padding: 0px 0;
     margin:0px;
-    top: 0
+    top: 0;
+    background: transparent;
 }
 
 .hero__container {
@@ -24,6 +25,7 @@
     height: 90%;
     text-align: center;
     padding: 30px;
+    background: transparent;
 }
 
 .hero__heading {
@@ -116,15 +118,22 @@
     align-items: center;
     transition: all 0.5s ease;
 }
+.check_cont{
+    display: none;
+    width: 350px;
+    height: 100px;
+    align-items: center;
+    background: transparent;
+}
 #checkthis{
     display: none;
     align-items: center;
-    width: 30%;
+    width: 100%;
+    font-size: 40px;
+    background: transparent;
 }
 
-#checkthis.isActive{
-    font-size: 40px;
-    margin-top: -300px;
+#checkthis.isActive{ 
     display: flex;
     text-align: left;
     color: #f1f1ff;
@@ -133,25 +142,28 @@
     white-space: nowrap;
     letter-spacing: .15rem;
     animation-delay: 2s;
-    animation: typing2 3s steps(10, end), blink-caret 0.75s step-end infinite ;
+    animation: typing2 3s steps(20, end), blink-caret 0.75s step-end infinite ;
     animation-fill-mode: forwards;
 }
 
+.img2asci_cont{
+    background: transparent;
+    width: 500px;
+}
+
 .img2ascii {
-    visibility:hidden;
+    display: none;
     width: 0;
-    top:-1000px ;
+    background: transparent;
+    font-size: 4.6px;
+    line-height: 130%;
 }
 
 .img2ascii.isActive {
-    visibility: visible;
     display: flex;
-    margin-top: -100px;
-    max-width: 600px;
+    max-width: 6000px;
     text-align: left;
-    margin-left: 65px;
     overflow: hidden;
-    font-size: 5px;
     color: aliceblue;
     letter-spacing: .1em; /* Adjust as needed */
     animation: typing 4s steps(100, end);
@@ -165,21 +177,18 @@
     to { width: 100% }
 }
 @keyframes typing2 {
-    0% { width: 0 }
-    50% { width: 30% }
-    70% {width:30%}
-    100%{ width: 0% }
-}
-@keyframes delete {
-    from { width: 30%}
-    to {width: 0%}
+    0% { width: 0; display: flex; }
+    50% { width: 100%; display: flex; }
+    78% {width:100%; display: flex;}
+    95% {width: 0%; display: flex;}
+    100%{ width: 0%; display: none; }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 255, 255); }
-  }
+}
 
 
 
@@ -187,6 +196,20 @@
     .hero__heading{
         font-size: 60px;
     }
+    #checkthis{
+        font-size: 25px;
+    }
+    .check_cont{
+        width: 230px;
+    }
+
+    .img2asci_cont{
+        width: 330px;
+    }
+    .img2ascii{
+        font-size: 3px;
+    }
+
     .hero__description{
         font-size: 40px;
     }
