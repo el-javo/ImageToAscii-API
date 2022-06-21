@@ -94,6 +94,7 @@
 
 .docs_btn {
     border: none;
+    text-decoration: none;
     cursor: pointer;
     background: #ff7301;
     background: -webkit-linear-gradient(to right, #ffffff, #ffffff,#ff7301);
