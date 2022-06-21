@@ -2,7 +2,6 @@ const modusImage = document.querySelector("#modus_img")
 const textgen = document.querySelector("#textgen")
 const checkthis = document.querySelector('#checkthis')
 const check_cont = document.querySelector('.check_cont')
-const docs_btn = document.querySelector('#docsbtn')
 
 function wait(milliseconds) {
     const date = Date.now();
