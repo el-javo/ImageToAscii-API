@@ -79,7 +79,7 @@ const verifyEmail = async (req,res) =>{
     user.verificationToken = null
     await user.validate()
     await user.save()
-    const verificationPath = path.join(__dirname + '../public/verification.html')
+    const verificationPath = path.resolve(__dirname , '../public/verification.html')
     res.status(StatusCodes.OK).sendFile(verificationPath)
 }
 const forgotPassword = async (req,res)=>{

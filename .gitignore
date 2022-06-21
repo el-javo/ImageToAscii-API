@@ -2,3 +2,5 @@
 .env
 /public/i2a.png
 /public/i2a.psd
+test.js
+/tests
