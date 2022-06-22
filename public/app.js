@@ -34,11 +34,11 @@ const generateText = ()=>{
 
 const activeNavbar_scroll = ()=>{
     const current_section = ""
-    if(scrollY > 200 ){
+    if(scrollY > 150 ){
         if(!navbar.classList.contains('isActive')){
             navbar.classList.toggle('isActive')
         }
-    }else if(scrollY < 200 && navbar.classList.contains('isActive')){
+    }else if(scrollY < 150 && navbar.classList.contains('isActive')){
         navbar.classList.toggle('isActive')
     }
 }
