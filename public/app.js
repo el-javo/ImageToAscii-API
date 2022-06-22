@@ -34,11 +34,13 @@ const activeNavbar_scroll = ()=>{
         if(!navbar.classList.contains('isActive')){
             navbar.classList.toggle('isActive')
         }
-        navbar.style.top = String(scrollY) + 'px'
     }else if(scrollY < 200 && navbar.classList.contains('isActive')){
         navbar.classList.toggle('isActive')
-        navbar.style.top = '-300px'
     }
+}
+
+const logsmt = ()=>{
+    console.log("working");
 }
 modusImage.addEventListener('click', generateText)
 window.addEventListener('scroll', activeNavbar_scroll)
