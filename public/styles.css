@@ -14,8 +14,11 @@
 .ghost_navbar{
     display:flex;
     position:sticky;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     top:0;
-    margin-right: -15px;
+
 }
 
 .navbar{
@@ -28,7 +31,7 @@
     align-items: center;
     width: 100%;
     z-index: 9999;
-    box-shadow: 0px 1px 10px 0px;
+    box-shadow: -10px 1px 10px 0px;
     transition: 0.2s ease-in;
     z-index: 999;
     height: 80px;
@@ -36,7 +39,7 @@
 
 .navbar.isActive{
     top:100%;
-    transition: 0.2s ease-out; 
+    transition: 0.5s ease-out; 
 }
 
 .navbar_container{
@@ -60,8 +63,9 @@
 
 .navbar_menu{
     display: flex;
-    margin-right: 30px;
-    justify-content: center;
+    flex-direction: row;
+    margin-right: 10px;
+    justify-content: flex-end;
     align-items: center;
     background: transparent;
     list-style-type: none;
@@ -75,14 +79,26 @@
 .navbar_link{
     display:inline-block;
     background: transparent;
+    white-space: nowrap;
+    word-spacing: -0.3ch;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     color: #73737d;
+    transition: 0.5s ease;
+}
+
+.navbar_link:hover{
+    color:#f0f0ff;
+    transition: 0.5s ease;
+}
+
+.navbar_burger{
+    display: none;
 }
 
 
 .hero {
-    padding: 0px 0;
+    padding: 0px;
     margin:0px;
     top: 0;
     background: transparent;
@@ -93,7 +109,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
     height: 90%;
     text-align: center;
@@ -145,6 +160,7 @@
 }
 .ratio{
     margin-top: 20px;
+    color: white;
 }
 
 .file_input{
@@ -158,6 +174,12 @@
 
 .ratio{
     background: transparent;
+}
+
+.ratioval{
+    background: transparent;
+    color:#cecedb;
+
 }
 
 #verification_heading{
@@ -186,8 +208,8 @@
     width : calc(300px*1.05);
     height: calc(300px*1.05);
     border-radius: calc(6px*1.05);
-    margin-top: calc(15px - (300px*0.05)/2);
-    margin-bottom: calc(15px - (300px*0.05)/2);
+    margin-top: calc(30px - (300px*0.05)/2);
+    margin-bottom: calc(30px - (300px*0.05)/2);
     transition: all 0.5s ease;
 }
 
@@ -238,18 +260,6 @@
     -moz-text-fill-color: transparent;
 }
 
-
-#docsbtn:hover {
-    font-size: 130%;
-    height: calc(35px*1.5);
-    width: calc(120px*1.2);
-    margin-top:calc(15px - (35px*0.5)/2);
-    margin-bottom: calc(15px - (35px*0.5)/2);
-    border-radius: calc(5px * 1.5);
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-}
 .check_cont{
     display: none;
     width: 350px;
@@ -342,8 +352,61 @@
         font-size: 3px;
         line-height: 150%;
     }
-
     .hero__description{
         font-size: 40px;
+    }
+    .navbar_menu{
+        display: none;
+        margin-right: -35px;
+        flex-direction: row;
+        transition: 0.2s ease-out;
+    }
+    .navbar_item{
+        margin:17px;
+    }
+    .navbar_link{
+        white-space: nowrap;
+        font-size:20px;
+        color:#a6a6b0
+    }
+    .navbar_burger{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin: 3px ;
+        transition: all 0.3s ease-in-out;
+        background: transparent;
+        cursor:pointer;
+    }
+    .bar{
+        width: 40px;
+        height: 5px;
+        margin: 2px;
+        border-radius: 3px;
+        background: #cecedb;
+        transition: 0.2s ease;
+    }
+    .navbar_burger.isActive .bar:nth-child(1){
+        transform: translateY(13.5px) rotate(45deg);
+    }
+    .navbar_burger.isActive .bar:nth-child(3){
+        transform: translateY(-13.5px) rotate(-45deg);
+    }
+    .navbar_burger.isActive .bar:nth-child(2){
+        opacity:0;
+    }
+    .navbar_menu.burgerActive{
+        display: flex;
+    }
+    .navbar_logo.burgerActive{
+        margin-left: -200px;
+        transition: 0.2s ease-out;
+    }
+    .navbar_logo{
+        font-size: 25px;
+        margin:0;
+        transition: 0.2s ease-out;
     }
 }

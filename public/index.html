@@ -13,11 +13,6 @@
         <nav class="navbar">
             <div class="navbar_container">
                 <a href="#home" class="navbar_logo">Image2Ascii</a>
-                <div class="navbar_burger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
                 <ul class="navbar_menu">
                     <li class="navbar_item">
                         <a href="#home" class="navbar_link">Home</a>
@@ -35,6 +30,11 @@
                         <a href=/Log-in class="navbar_link" id="Log-in">Log in</a>
                     </li>
                 </ul>
+                <div class="navbar_burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </nav>
     </div>
@@ -150,7 +150,8 @@
                     <label for="ratio" class="form_lbl" id="ratio_lbl">
                         Choose ratio
                     </label>
-                    <input type ="range" min ="0.01" max="0.4" step="0.01" name="ratio" id="ratio" class="ratio">0.1</input type ="range">
+                    <input type ="range" min ="0.01" max="0.4" step="0.01" name="ratio" id="ratio" class="ratio">
+                    <p class="ratioval">0.1</p>
                 </div>
             </form>
         </div>

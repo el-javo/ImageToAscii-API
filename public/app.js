@@ -4,6 +4,10 @@ const checkthis = document.querySelector('#checkthis')
 const check_cont = document.querySelector('.check_cont')
 const navbar = document.querySelector('.navbar')
 const navbarlogo = document.querySelector('.navbar_logo')
+const ratiobar = document.querySelector('.ratio')
+const ratioVal = document.querySelector('.ratioval')
+const navbar_burger = document.querySelector('.navbar_burger')
+const navbar_menu = document.querySelector('.navbar_menu')
 
 function wait(milliseconds) {
     const date = Date.now();
@@ -39,8 +43,15 @@ const activeNavbar_scroll = ()=>{
     }
 }
 
-const logsmt = ()=>{
-    console.log("working");
+const toggle_burger_deploy = ()=>{
+    navbar_burger.classList.toggle('isActive')
+    navbar_menu.classList.toggle('burgerActive')
+    navbarlogo.classList.toggle('burgerActive')
 }
+
 modusImage.addEventListener('click', generateText)
 window.addEventListener('scroll', activeNavbar_scroll)
+ratiobar.addEventListener("input", function(){
+    ratioVal.innerHTML = ratiobar.value
+})
+navbar_burger.addEventListener('click', toggle_burger_deploy)
