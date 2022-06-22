@@ -25,21 +25,21 @@
     display: flex;
     margin-left: -10px;
     position: absolute;
-    top: -300px;
+    top: -100px;
     background: linear-gradient(to right, #232235, #23152f), linear-gradient(to bottom );
     justify-content: center;
     align-items: center;
     width: 100%;
     z-index: 9999;
     box-shadow: -10px 1px 10px 0px;
-    transition: 0.2s ease-in;
     z-index: 999;
     height: 80px;
+    transition: 0.2s ease-in;
 }
 
 .navbar.isActive{
     top:100%;
-    transition: 0.5s ease-out; 
+    transition: 0.3s ease-out; 
 }
 
 .navbar_container{
