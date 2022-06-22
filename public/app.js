@@ -2,6 +2,8 @@ const modusImage = document.querySelector("#modus_img")
 const textgen = document.querySelector("#textgen")
 const checkthis = document.querySelector('#checkthis')
 const check_cont = document.querySelector('.check_cont')
+const navbar = document.querySelector('.navbar')
+const navbarlogo = document.querySelector('.navbar_logo')
 
 function wait(milliseconds) {
     const date = Date.now();
@@ -26,4 +28,17 @@ const generateText = ()=>{
     textgen.classList.toggle('isActive')
 }
 
+const activeNavbar_scroll = ()=>{
+    const current_section = ""
+    if(scrollY > 200 ){
+        if(!navbar.classList.contains('isActive')){
+            navbar.classList.toggle('isActive')
+        }
+        navbar.style.top = String(scrollY) + 'px'
+    }else if(scrollY < 200 && navbar.classList.contains('isActive')){
+        navbar.classList.toggle('isActive')
+        navbar.style.top = '-300px'
+    }
+}
 modusImage.addEventListener('click', generateText)
+window.addEventListener('scroll', activeNavbar_scroll)

@@ -9,15 +9,40 @@
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="#home" class="navbar_logo">Image2Ascii</a>
+            <div class="navbar_burger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="#home" class="navbar_link">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#tryit" class="navbar_link">Try it</a>
+                </li>
+                <li class="navbar_item">
+                    <a href=/docs class="navbar_link">Docs</a>
+                </li>
+                <li class="navbar_item" id="Sign in">
+                    <a href=/Sing-in class="navbar_link">Sign in</a>
+                </li>
+                <li class="navbar_item">
+                    <a href=/Log-in class="navbar_link" id="Log-in">Log in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- home section  -->
     <div class="hero" id="home">
-        <div class="hero__container">
-            <h1 class="hero__heading">
+        <div class="section_container">
+            <h1 class="heading">
                 Image2Ascii
             </h1>
             <p class="description">Turn your boring .jpg images into an ascii artwork</p>
-            <a class="docs_btn" id="docsbtn" href = "/docs">
-                <span class="docs_span" id="docspan">docs</span>
-            </a>
             <img src="modus.jpg" alt="" class="image" id="modus_img">
             <div class="check_cont">
                 <p id="checkthis">Check This Out</p>
@@ -108,7 +133,24 @@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@mf~~!~";""~~!(#mw!"";;;:..vw;.:..~!~!;.;..*O8mmXkz(zrZkrTcv*+>!!!~::::::.:~!
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Gc~;~~""~~~~~~~:...;~~"!;....:~"~~::::!I4HgErn7FkhE5O6r*>!!!!~~~~;;::::..;</p>
             </div>
-
+        </div>
+    </div>
+    <div class="tryit" id = "tryit">
+        <div class="section_container">
+            <h2 class = "heading" id="tryit_heading">Try it yourself</h2>
+            <p class="description">Just upload your own image, select a ratio and we'll do the rest</p>
+            <form action="/tryit.js" class="tryit_form">
+                <div class="form_cont">
+                    <label for="upload_img" class="form_lbl" id="upload_lbl">Upload your image</label><br>
+                    <input type="file" id="upload_img" name="upload_img" class="file_input" accept="image/jpeg, image/jpg">
+                </div>
+                <div class="form_cont">
+                    <label for="ratio" class="form_lbl" id="ratio_lbl">
+                        Choose ratio
+                    </label>
+                    <input type ="range" min ="0.01" max="0.4" step="0.01" name="ratio" id="ratio" class="ratio">0.1</input type ="range">
+                </div>
+            </form>
         </div>
     </div>
     <script src="app.js"></script>
