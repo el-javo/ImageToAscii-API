@@ -59,6 +59,7 @@
     text-decoration: none;
     font-size: 50px;
     padding: 20px;
+    transition: 0.2s ease;
 }
 
 .navbar_menu{
@@ -129,58 +130,6 @@
     margin-top: 20px;
 }
 
-#tryit_heading{
-    font-size: 60px;
-    margin-top: 100px;
-}
-
-.tryit_form{
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.form_cont {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
-}
-
-.form_lbl{
-    background: transparent;
-    color: #e0e0f8;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 10px;
-}
-.ratio{
-    margin-top: 20px;
-    color: white;
-}
-
-.file_input{
-    display: flex;
-    cursor: pointer;
-    background: transparent;
-    justify-content: center;
-    align-items: center;
-    color: #f8dffd;
-}
-
-.ratio{
-    background: transparent;
-}
-
-.ratioval{
-    background: transparent;
-    color:#cecedb;
-
-}
 
 #verification_heading{
     font-size: 50px;
@@ -313,6 +262,66 @@
     animation-fill-mode: forwards;
 }
 
+/* tryit form */
+
+#tryit_heading{
+    font-size: 60px;
+    margin-top: 100px;
+}
+
+.tryit_form{
+    background: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.form_cont {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.form_lbl{
+    background: transparent;
+    color: #e0e0f8;
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    align-items: center;
+    margin: 30px;
+}
+.ratio{
+    margin-top: 2px;
+    color: white;
+}
+
+.file_input{
+    display: flex;
+    cursor: pointer;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    color: #f8dffd;
+}
+
+.ratio{
+    background: transparent;
+}
+
+.ratioval{
+    background: transparent;
+    color:#cecedb;
+
+}
+
+
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
@@ -334,7 +343,8 @@
 
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 860px){
+    /* home-demo */
     .heading{
         font-size: 60px;
     }
@@ -355,6 +365,7 @@
     .hero__description{
         font-size: 40px;
     }
+    /* navbar */
     .navbar_menu{
         display: none;
         margin-right: -35px;
@@ -409,4 +420,8 @@
         margin:0;
         transition: 0.2s ease-out;
     }
+
+    /* tryit  */
+    
+    
 }
