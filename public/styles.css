@@ -20,7 +20,7 @@
     justify-content: center;
     width: 100%;
     top:0;
-
+    z-index: 12;
 }
 
 .navbar{
@@ -33,7 +33,7 @@
     align-items: center;
     overflow: hidden;
     width: 100%;
-    z-index: 9999;
+    z-index: 9;
     box-shadow: -10px 1px 10px 0px;
     height: 80px;
     transition: 0.2s ease-in;
@@ -380,6 +380,7 @@
     z-index: -1;
 }
 #borde_selektor{
+    z-index: 1;
     opacity:60%;
 }
 
