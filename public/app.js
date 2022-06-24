@@ -75,13 +75,8 @@ const format_selector_toggle = (wich)=>{
 
 
 const generate_animation_toggle =()=>{
-    generate_txt.classList.toggle('isActive')
-    setTimeout(function(){
-        generate_txt.classList.toggle('notVisible')
-    },2000)
-    setTimeout(function(){
-        loading_txt.classList.add('middle')
-    },2000)
+    generate_txt.classList.toggle('loading')
+    loading_txt.classList.toggle('loading')
 }
 
 

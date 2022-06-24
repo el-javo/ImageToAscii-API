@@ -288,7 +288,8 @@
     width: 350px;
     height: 100px;
     display: flex;
-    padding:5px;
+    padding:0px;
+    overflow: hidden;
     border: 1px solid #cecedb;
     border-radius: 15px;
     flex-direction: column;
@@ -341,27 +342,42 @@
 
 .format_cont{
     display: flex;
+    width:200px;
     flex-direction: row;
     background: transparent;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 50px;
 }
 
 .format_selector{
     color: #cecedb;
-    margin: 25px;
     font-size: 25px;
     background: transparent;
     cursor:pointer;
+    z-index: 9;
     transition: 0.1s ease;
+}
+#jpg{
+    margin-right: 30px;
+}
+#txt{
+    margin-left: 30px;
 }
 
 .format_selector:hover{
     font-size: 26px;
-    margin: 24px;
     color: #f0f0ff;
+    transition: 0.1s ease;
+}
+
+#jpg:hover{
+    margin-right: 28px;
+    transition: 0.1s ease;
+}
+
+#txt:hover{
+    margin-left: 28px;
     transition: 0.1s ease;
 }
 
@@ -370,10 +386,10 @@
     position: relative;
     top:0px;
     border-radius: 10px;
-    left:-82px;
-    height: 30px;
-    width: 100%;
+    left:-60px;
     padding:20px;
+    padding-left: 35px;
+    padding-right: 35px;
     background: transparent;
     border: 2px solid #cecedb;
     transition: 0.1s ease;
@@ -393,51 +409,37 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     cursor: pointer;
 }
 #generate_txt{
     display:flex;
     color: #cecedb;
     font-size: 30px;
+    margin-right: 1470px;
     background: transparent;
     transition: 2s ease;
 }
-
-#generate_txt.isActive{
-    margin-right:-2000px;
-    letter-spacing: 10ch;
-    transition: 2s ease;
-}
-
 #loading_txt{
-    display: none;
+    left: 0px;
     color: #cecedb;
     font-size: 30px;
-    margin-left:2000px;
+    letter-spacing: 10ch;
+    margin-right: 200px;
     background: transparent;
+    transition: 2s ease;
 }
-#loading_txt.initial{
-    display: flex;
-    margin-left: -2000px;
-    letter-spacing: 10ch;
-}
-#loading_txt.middle{
-    display: flex;
-    margin-left: 0px;
+#loading_txt.loading{
     letter-spacing: 0ch;
-    transition-delay: 5ms;
+    margin-right: 200px;
+    margin-left: 180px;
     transition: 2s ease;
 }
-#loading_txt.final{
-    margin-left: 2200px ;
+#generate_txt.loading{
+    margin-right:-1470px;
     letter-spacing: 10ch;
-    transition-delay: 2005ms;
     transition: 2s ease;
-}
-
-
-#generate_txt.notVisible{
-    display:none;
 }
 
 
@@ -541,7 +543,9 @@
     }
 
     /* tryit  */
-    
+    .tryit_form{
+        width: 100%;
+    }
     .form_cont{
         margin:18px
     }
