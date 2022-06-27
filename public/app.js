@@ -84,8 +84,28 @@ const generate_animation_toggle =()=>{
     loading_txt.classList.toggle('loading')
 }
 
+const download = (data,filename,type) =>{
+    const file = new Blob([data], {type:type})
+    if(window.navigator.msSaveOrOpenBlob) //IE10+
+        window.navigator.msSaveOrOpenBlob(file,filename)
+    else{ //others
+        let a = document.createElement("a")
+        let url = URL.createObjectURL(file)
+        a.href = url;
+        a.download = filename
+        document.body.appendChild(a)
+        a.click()
+        setTimeout(function(){
+            document.body.removeChild(a)
+            window.URL.revokeObjectURL(url)
+        },0)
+    }
+}
+
 const generateImgAPI = async  ()=>{
-    const url = borde_selektor.classList.contains('isJpg') ? "https://image2ascii.up.railway.app/api/v1/gen/generateImgNoUp":"https://image2ascii.up.railway.app/api/v1/gen/generateTxtNoUp"
+    const isJpg = borde_selektor.classList.contains('isJpg')
+
+    const url = isJpg ? "https://image2ascii.up.railway.app/api/v1/gen/generateImgNoUp":"https://image2ascii.up.railway.app/api/v1/gen/generateTxtNoUp"
     const image = file.files[0]
     const inverted = invert_cont.classList.contains('inverted') ? 'true':'false'
     const ratio = ratiobar.value
@@ -102,7 +122,7 @@ const generateImgAPI = async  ()=>{
     formData.append('invert', inverted)
     formData.append('contrast', contrast)
     formData.append('resolution', ratio)
-    if(borde_selektor.classList.contains('isJpg')){
+    if(isJpg){
         const bgColor = invert_cont.classList.contains('inverted') ? '0':'255'
         const fontColor = invert_cont.classList.contains('inverted') ? '255':'0'
         formData.append('backgroundColor', bgColor)
@@ -113,21 +133,18 @@ const generateImgAPI = async  ()=>{
         formData.append('fontColor', fontColor)
     }
 
-    // const res = await axios({
-    //     method:'post',
-    //     url:url,
-    //     data:formData,
-    //     headers:{
-    //         'Accept':'*/*',
-    //         'Accept-Encoding': 'gzip, deflate, br',
-    //         'Connection': 'keep-alive'
-    //     }
-    // })
-    console.log('send')
     form_cont_img.classList.remove('badData')
     generate_animation_toggle()
+
     const res = await axios.post(url, formData)
-    console.log('done')
+
+    const type = isJpg ? 'image/jpg':'text/plain'
+    const filename = isJpg ? String(image.name + '_2ascii.jpg') : String(image.name + '_2ascii.txt')
+    download(res.data, filename, type)
+
+    generate_animation_toggle()
+    console.log(res.data);
+
 }
 const generate = ()=>{
     generateImgAPI()
