@@ -149,7 +149,7 @@ const generateImgAPI = async  ()=>{
     }
 
     const type = isJpg ? 'image/jpg':'text/plain'
-    const filename = isJpg ? String(image.name + '_2ascii.jpg') : String(image.name + '_2ascii.txt')
+    const filename = isJpg ? 'generation.jpg': 'generation.txt'
     download(data, filename, type)
 
     generate_animation_toggle()
