@@ -136,14 +136,18 @@ const generateImgAPI = async  ()=>{
     form_cont_img.classList.remove('badData')
     generate_animation_toggle()
 
-    const res = await axios.post(url, formData)
+    const res = await fetch(url, {
+        method:"POST",
+        body:formData
+    })
+    const text = await res.text()
 
     const type = isJpg ? 'image/jpg':'text/plain'
     const filename = isJpg ? String(image.name + '_2ascii.jpg') : String(image.name + '_2ascii.txt')
-    download(res.data, filename, type)
+    download(text, filename, type)
 
     generate_animation_toggle()
-    console.log(res.data);
+    console.log(text);
 
 }
 const generate = ()=>{
