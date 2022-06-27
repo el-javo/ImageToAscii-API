@@ -123,8 +123,8 @@ const generateImgAPI = async  ()=>{
     formData.append('contrast', contrast)
     formData.append('resolution', ratio)
     if(isJpg){
-        const bgColor = invert_cont.classList.contains('inverted') ? '0':'255'
-        const fontColor = invert_cont.classList.contains('inverted') ? '255':'0'
+        const bgColor = invert_cont.classList.contains('inverted') ? '255':'0'
+        const fontColor = invert_cont.classList.contains('inverted') ? '0':'255'
         formData.append('backgroundColor', bgColor)
         formData.append('backgroundColor', bgColor)
         formData.append('backgroundColor', bgColor)
