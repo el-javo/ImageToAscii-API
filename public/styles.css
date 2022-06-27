@@ -306,6 +306,11 @@
     transition: 0.3s ease-out;
 }
 
+#form_cont_img.badData{
+    box-shadow: 0 0 50px #ff000084;
+    transition: 0.3s ease-out;
+}
+
 .form_lbl{
     background: transparent;
     color: #e0e0f8;
@@ -316,6 +321,7 @@
     font-size: 20px;
     margin: 10px;
 }
+
 .ratio{
     margin-top: 2px;
     color: white;
@@ -334,7 +340,7 @@
     background: transparent;
 }
 
-.ratioval{
+.rangeval{
     background: transparent;
     color:#cecedb;
     margin: 10px;
@@ -404,6 +410,26 @@
     left:-185px;
     transition: 0.1s ease;
 }
+
+#invert_txt{
+    font-size: 30px;
+    transition: 1s ease;
+}
+#invert_cont{
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+#invert_cont.inverted{
+    background: linear-gradient(to right, #cdccff, #dcb5ff);
+    transition: 1s ease;
+}
+
+#invert_txt.inverted{
+    color:#23152f;
+    transition: 1s ease;
+}
+
 
 #generate_cont{
     overflow: hidden;

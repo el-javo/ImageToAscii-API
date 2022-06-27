@@ -7,6 +7,7 @@
     <title>Image2Ascii</title>
     <link rel = "stylesheet" href = "styles.css">
     <link rel="icon" href="favicon.ico" />
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="ghost_navbar">
@@ -142,25 +143,35 @@
             <h2 class = "heading" id="tryit_heading">Try it yourself</h2>
             <p class="description">Just upload your own image, select a ratio and we'll do the rest</p>
             <form action="/tryit.js" class="tryit_form">
-                <div class="form_cont">
+                <div class="form_cont" id = "form_cont_img">
                     <label for="upload_img" class="form_lbl" id="upload_lbl">Upload your image</label><br>
                     <input type="file" id="upload_img" name="upload_img" class="file_input" accept="image/jpeg, image/jpg">
                 </div>
                 <div class="form_cont">
                     <label for="ratio" class="form_lbl" id="ratio_lbl">
-                        Choose ratio
+                        Ratio
                     </label>
                     <input type ="range" min ="0.01" max="0.4" step="0.01" name="ratio" id="ratio" class="ratio">
-                    <p class="ratioval">0.1</p>
+                    <p class="rangeval" id="ratioval">0.1</p>
                 </div>
                 <div class="form_cont" id="format_form_cont">
-                    <label for ="format" class="form_lbl" id="ratio_lbl">Choose Format</label>
+                    <label for ="format" class="form_lbl" id="ratio_lbl">Format</label>
                     <div class="format_cont" id="format">
                         <span class="border_selector" ></span>
                         <p class="format_selector" id="jpg">.jpg</p>
                         <p class="format_selector" id="txt">.txt</p>
                         <span class="border_selector" id="borde_selektor"></span>
                     </div>
+                </div>
+                <div class="form_cont">
+                    <label for="contrast" class="form_lbl" id="ratio_lbl">
+                        Contrast
+                    </label>
+                    <input type ="range" min ="0.5" max="2.5" step="0.1" name="contrast" id="contrast" class="ratio">
+                    <p class="rangeval" id="contrastval">1.7</p>
+                </div>
+                <div class="form_cont" id="invert_cont">
+                    <span class="form_lbl" id="invert_txt">Invert</span>
                 </div>
                 <div class="form_cont" id="generate_cont">
                     <span id="loading_txt">Loading</span>
