@@ -140,14 +140,19 @@ const generateImgAPI = async  ()=>{
         method:"POST",
         body:formData
     })
-    const text = await res.text()
+
+    let data = undefined
+    if(isJpg){
+        data = await res.blob()
+    }else{
+        data = await res.text()
+    }
 
     const type = isJpg ? 'image/jpg':'text/plain'
     const filename = isJpg ? String(image.name + '_2ascii.jpg') : String(image.name + '_2ascii.txt')
-    download(text, filename, type)
+    download(data, filename, type)
 
     generate_animation_toggle()
-    console.log(text);
 
 }
 const generate = ()=>{
