@@ -585,7 +585,7 @@
         transition: 2s ease;
     }
     #generate_txt.loading{
-        margin-right:-1600px;
+        margin-right:-1590px;
         letter-spacing: 10ch;
         transition: 2s ease;
     }
