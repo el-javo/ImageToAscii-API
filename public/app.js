@@ -155,11 +155,7 @@ const generateImgAPI = async  ()=>{
     generate_animation_toggle()
 
 }
-const generate = ()=>{
-    //generateImgAPI()
-    generate_animation_toggle()
 
-}
 
 const inverted = ()=>{
     invert_cont.classList.toggle('inverted')
@@ -171,7 +167,7 @@ window.addEventListener('scroll', activeNavbar_scroll)
 navbar_burger.addEventListener('click', toggle_burger_deploy)
 jpg_selector.addEventListener('click',format_selector_toggle('jpg'))
 txt_selector.addEventListener('click',format_selector_toggle('txt'))
-generate_cont.addEventListener('click',generate)
+generate_cont.addEventListener('click',generateImgAPI)
 invert_cont.addEventListener('click', inverted)
 ratiobar.addEventListener("input", function(){
     ratioVal.innerHTML = ratiobar.value
