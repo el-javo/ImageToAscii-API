@@ -156,7 +156,9 @@ const generateImgAPI = async  ()=>{
 
 }
 const generate = ()=>{
-    generateImgAPI()
+    //generateImgAPI()
+    generate_animation_toggle()
+
 }
 
 const inverted = ()=>{
