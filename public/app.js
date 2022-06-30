@@ -156,7 +156,6 @@ const generateImgAPI = async  ()=>{
 
 }
 
-
 const inverted = ()=>{
     invert_cont.classList.toggle('inverted')
     invert_txt.classList.toggle('inverted')
