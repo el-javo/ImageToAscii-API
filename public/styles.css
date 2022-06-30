@@ -74,6 +74,8 @@ body{
 .navbar_item{
     background: transparent;
     margin: 15px;
+    cursor: pointer;
+
 }
 
 .navbar_link{
@@ -512,6 +514,172 @@ footer{
 }
 
 
+/* auth */
+/* hay que poner otro container o user este en display none antes de activarlo
+para no joder la pag, como con ghost navbar */
+.ghost_auth{
+    position:sticky;
+    top:0px;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.auth_container{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0px;
+    background: #0f0e14ae;
+    padding:30px;
+    width: 100%;
+    height: 100vh;
+    transition: 0.5s ease;
+}
+
+.auth_container.isActive{
+    display: flex;
+    transition: 0.5s ease;
+}
+
+.auth_form_cont{
+    display: none;
+    position: absolute;
+    display: flex;
+    top:-700px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 35px;
+    box-shadow: 0 0 200px #cecedb23;
+    border: solid #cecedb 1px;
+    border-radius: 20px;
+    margin: 20px;
+    width: 700px;
+    transition: 0.5s ease;
+
+}
+
+.auth_form_cont.isActive{
+    top: 100px;
+    transition: 0.5s ease-in-out;
+}
+
+.exitbtn_cont{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: right;
+    background: transparent;
+    width: 100%;
+}
+.exit_cont{
+    display: flex;
+    background: transparent;
+    width: 30px;
+    height: 45px;
+    flex-direction: column;
+    cursor: pointer;
+}
+.closing_bar_up{
+    width: 100%;
+    border-radius: 3px;
+    transform: translateY(7.0px) rotate(-45deg) ;
+    padding:2px;
+    margin: 5px;
+    background: #cecedb;
+}
+
+.closing_bar_dwn{
+    width: 100%;
+    border-radius: 3px;
+    transform: translateY(-7.0px) rotate(45deg) ;
+    padding:2px;
+    margin: 5px;
+    background: #cecedb;
+}
+
+.auth_form_title{
+    color: #cecedb;
+    text-align: left;
+    background: transparent;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.subform_cont{
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: left;
+    margin: 10px;
+}
+
+.btn_row{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+.ghost_auth input{
+    background: #ababab0a;
+    border-radius: 5px;
+    color: #cecedb;
+    font-size: 25px;
+}
+
+.ghost_auth label{
+    font-size: 25px;
+    margin-bottom: 3px;
+    justify-content: left;
+    background: transparent;
+    color:#cecedb;
+}
+.ghost_auth a{
+    text-decoration: none;
+}
+.auth_button_prim{
+    display:flex;
+    background: linear-gradient(to right, #908cdf, #a765e0);
+    border:solid 1px #cecedb;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+}
+
+.auth_button_sec{
+    display:flex;
+    background: transparent;
+    border:solid 1px #cecedb;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+}
+
+#forgot_btn{
+    margin-top: 20px;
+    cursor: pointer;
+}
+.insd_auth_btn{
+    background: transparent;
+    color: #cecedb;
+    font-size: 17px;
+}
+
+.ghost_auth input.isBad{
+    box-shadow: 0 0 15px #ff2c2cb1;
+}
+
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
@@ -631,5 +799,14 @@ footer{
         margin-right:-1615px;
         letter-spacing: 10ch;
         transition: 2s ease;
+    }
+
+    /* auth */
+    .auth_form_cont{
+        width: 450px;
+    }
+    
+    .auth_form_cont input{
+        font-size: 18px;
     }
 }

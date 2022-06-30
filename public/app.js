@@ -22,6 +22,30 @@ const invert_txt = document.querySelector('#invert_txt')
 const contrastbar = document.querySelector('#contrast')
 const contrastVal = document.querySelector('#contrastval')
 
+const auth_container = document.querySelector('.auth_container')
+const sign_in_container = document.querySelector('#sign_in_container')
+const sign_up_container = document.querySelector('#sign_up_container')
+const forgot_password_container = document.querySelector('#forgot_password_container')
+const auth_panels = {
+    'register':sign_up_container,
+    'login':sign_in_container,
+    'forgot':forgot_password_container
+}
+const exit_btn1 = document.querySelector('#exit_1')
+const exit_btn2 = document.querySelector('#exit_2')
+const exit_btn3 = document.querySelector('#exit_3')
+const loginL_btn = document.querySelector('#signinS_btn')
+const registerL_btn = document.querySelector('#registerS_btn')
+const forgot_btn = document.querySelector('#forgot_btn')
+const registerR_btn = document.querySelector('#registerR_btn')
+const loginR_btn = document.querySelector('#loginR_btn')
+const send_reset_btn = document.querySelector('#send_reset_btn')
+const login_nav = document.querySelector('#login_nav')
+const register_nav = document.querySelector('#register_nav')
+
+
+
+
 
 function wait(milliseconds) {
     const date = Date.now();
@@ -161,6 +185,43 @@ const inverted = ()=>{
     invert_txt.classList.toggle('inverted')
 }
 
+const closeAllPanels = ()=>{
+    Object.values(auth_panels).forEach(elem => {
+        elem.classList.remove('isActive')
+    });
+}
+
+const goToPanel = (panel)=>{
+    return ()=>{
+        auth_container.classList.add('isActive')
+        closeAllPanels()
+        setTimeout(function() {
+            auth_panels[panel].classList.add('isActive')            
+        }, 200);
+    }
+}
+
+const closeAuth = ()=>{
+    console.log('exit');
+    closeAllPanels()
+    setTimeout(function(){
+        auth_container.classList.remove('isActive')
+    },400)
+}
+
+const login = ()=>{
+
+}
+const register = ()=>{
+
+}
+const sendForgot = ()=>{
+
+}
+
+
+
+//event listeners
 modusImage.addEventListener('click', generateText)
 window.addEventListener('scroll', activeNavbar_scroll)
 navbar_burger.addEventListener('click', toggle_burger_deploy)
@@ -168,6 +229,19 @@ jpg_selector.addEventListener('click',format_selector_toggle('jpg'))
 txt_selector.addEventListener('click',format_selector_toggle('txt'))
 generate_cont.addEventListener('click',generateImgAPI)
 invert_cont.addEventListener('click', inverted)
+register_nav.addEventListener('click', goToPanel('register'))
+login_nav.addEventListener('click', goToPanel('login'))
+registerL_btn.addEventListener('click', goToPanel('register'))
+loginL_btn.addEventListener('click', login)
+forgot_btn.addEventListener('click', goToPanel('forgot'))
+registerR_btn.addEventListener('click',register)
+loginR_btn.addEventListener('click', goToPanel('login'))
+send_reset_btn.addEventListener('click', sendForgot)
+exit_btn1.addEventListener('click', closeAuth)
+exit_btn2.addEventListener('click', closeAuth)
+exit_btn3.addEventListener('click', closeAuth)
+
+
 ratiobar.addEventListener("input", function(){
     ratioVal.innerHTML = ratiobar.value
 })

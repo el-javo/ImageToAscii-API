@@ -10,6 +10,91 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="ghost_auth">
+        <div class="auth_container">
+            <div class = auth_form_cont id="sign_in_container">
+                <div class="exitbtn_cont">
+                    <div class="exit_cont" id="exit_1">
+                        <span class="closing_bar_up"></span>
+                        <span class="closing_bar_dwn"></span>
+                    </div>
+                </div>
+                <h1 class="auth_form_title" id="SignIn">
+                    Login
+                </h1>
+                <div class="subform_cont">
+                    <label for="email" class="auth_label">email</label>
+                    <input type="text" name="email" class="auth_input" placeholder="example@email.es">
+                </div>
+                <div class="subform_cont">
+                    <label for="password" class="auth_label">password</label>
+                    <input type="password" name="password" class="auth_input" placeholder="ur_cat_name_123">
+                </div>
+                <div class="subform_cont">
+                    <div class="btn_row">
+                        <a class="auth_button_prim" id="signinS_btn"><span class="insd_auth_btn">LogIn</span></a>
+                        <a class="auth_button_sec" id="registerS_btn"><span class="insd_auth_btn">Register</span> </a>
+                    </div>
+                    <div class="btn_row" >
+                        <a class="auth_button_thrd" id = "forgot_btn"><span class="insd_auth_btn">Forgot password</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class = auth_form_cont id="sign_up_container">
+                <div class="exitbtn_cont">
+                    <div class="exit_cont" id="exit_2">
+                        <span class="closing_bar_up"></span>
+                        <span class="closing_bar_dwn"></span>
+                    </div>
+                </div>
+                <h1 class="auth_form_title" id="Register">
+                    Register
+                </h1>
+                <div class="subform_cont">
+                    <label for="email" class="auth_label">email</label>
+                    <input type="text" name="email" class="auth_input" placeholder="example@email.es">
+                </div>
+                <div class="subform_cont">
+                    <label for="user" class="auth_label">username</label>
+                    <input type="text" name="user" class="auth_input" placeholder="theGuy">
+                </div>
+                <div class="subform_cont">
+                    <label for="password" class="auth_label">password</label>
+                    <input type="password" name="password" class="auth_input" placeholder="not-123456"><br>
+                </div>
+                <div class="subform_cont">
+                    <label for="password-re" class="auth_label">repeat password</label>
+                    <input type="password" name="password-re" class="auth_input" placeholder="not-123456-again">
+                </div>
+                <div class="subform_cont" id="register_btns">
+                    <div class="btn_row">
+                        <a class="auth_button_prim" id="registerR_btn"><span class="insd_auth_btn">Register</span></a>
+                        <a class="auth_button_sec" id="loginR_btn"><span class="insd_auth_btn">Login</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class = auth_form_cont id="forgot_password_container">
+                <div class="exitbtn_cont">
+                    <div class="exit_cont" id="exit_3">
+                        <span class="closing_bar_up"></span>
+                        <span class="closing_bar_dwn"></span>
+                    </div>
+                </div>
+                <h1 class="auth_form_title" id="SignIn">
+                    Forgot Password?
+                </h1>
+                <div class="subform_cont">
+                    <label for="email" class="auth_label">email</label>
+                    <input type="text" name="email" class="auth_input" placeholder="youremail@email.es">
+                </div>
+                <div class="subform_cont">
+                    <div class="btn_row">
+                        <a class="auth_button_prim" id="send_reset_btn"><span class="insd_auth_btn">Send Mail</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="ghost_navbar">
         <nav class="navbar">
             <div class="navbar_container">
@@ -24,11 +109,11 @@
                     <li class="navbar_item">
                         <a href=/docs class="navbar_link">Docs</a>
                     </li>
-                    <li class="navbar_item" id="Sign in">
-                        <a href=/Sing-in class="navbar_link">Sign in</a>
+                    <li class="navbar_item" id="register_nav">
+                        <a  class="navbar_link">Register</a>
                     </li>
                     <li class="navbar_item">
-                        <a href=/Log-in class="navbar_link" id="Log-in">Log in</a>
+                        <p class="navbar_link" id="login_nav">Login</p>
                     </li>
                 </ul>
                 <div class="navbar_burger">
