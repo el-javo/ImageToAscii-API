@@ -5,6 +5,7 @@
     scroll-behavior: smooth;
     background: #0d0d0f;
     background: linear-gradient(to right, #232235, #23152f);
+    background-size:cover ;
 }
 body{
     margin:0px;
