@@ -563,7 +563,6 @@ para no joder la pag, como con ghost navbar */
     margin: 20px;
     width: 700px;
     transition: 0.5s ease;
-
 }
 
 .auth_form_cont.isActive{
@@ -804,7 +803,7 @@ para no joder la pag, como con ghost navbar */
 
     /* auth */
     .auth_form_cont{
-        width: 450px;
+        width: 390px;
     }
     
     .auth_form_cont input{
