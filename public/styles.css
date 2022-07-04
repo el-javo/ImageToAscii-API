@@ -9,11 +9,11 @@
 }
 body{
     margin:0px;
-    background-color: #23152f;
+    background-color: linear-gradient(to right, #232235, #23152f);
     overscroll-behavior-y: contain;
     overscroll-behavior-x: none;
 
-}
+} 
 
 /* navbar */
 .ghost_navbar{
