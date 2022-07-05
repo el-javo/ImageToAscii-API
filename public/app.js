@@ -22,6 +22,7 @@ const invert_txt = document.querySelector('#invert_txt')
 const contrastbar = document.querySelector('#contrast')
 const contrastVal = document.querySelector('#contrastval')
 
+//auth buttons
 const auth_container = document.querySelector('.auth_container')
 const sign_in_container = document.querySelector('#sign_in_container')
 const sign_up_container = document.querySelector('#sign_up_container')
@@ -43,7 +44,21 @@ const send_reset_btn = document.querySelector('#send_reset_btn')
 const login_nav = document.querySelector('#login_nav')
 const register_nav = document.querySelector('#register_nav')
 
-
+//auth inputs
+const email_login_inp = document.querySelector('#emial_login_input')
+const password_login_inp = document.querySelector('#password_login_inp')
+const email_register_inp = document.querySelector('#email_register_input')
+const username_register_inp = document.querySelector('#username_register_input')
+const password_register_inp = document.querySelector('#password_register_input')
+const repassword_register_input = document.querySelector('#repassword_register_input')
+const email_forgot_inp = document.querySelector('#email_forgot_input')
+const auth_alert_login_email = document.querySelector('#auth_alert_login_email')
+const auth_alert_login_password = document.querySelector('#auth_alert_login_password')
+const auth_alert_register_email = document.querySelector('#auth_alert_register_email')
+const auth_alert_register_username = document.querySelector('#auth_alert_register_username')
+const auth_alert_register_password = document.querySelector('#auth_alert_register_password')
+const auth_alert_register_repassword = document.querySelector('#auth_alert_register_repassword')
+const auth_alert_forgot_email = document.querySelector('#auth_alert_forgot_email')
 
 
 
@@ -210,12 +225,62 @@ const closeAuth = ()=>{
 }
 
 const login = ()=>{
+    email_login_inp.classList.remove('isBad')
+    password_login_inp.classList.remove('isBad')
+    auth_alert_login_email.classList.remove('isActive')
+    auth_alert_login_password.classList.remove('isActive')
 
+    if(email_login_inp.value == '' ){
+        email_login_inp.classList.add('isBad')
+        auth_alert_login_email.classList.add('isActive')
+        auth_alert_login_email.innerHTML = 'please provide email'
+    }
+    if(password_login_inp.value == ''){
+        password_login_inp.classList.add('isBad')
+        auth_alert_login_password.classList.add('isActive')
+        auth_alert_login_password.innerHTML = 'please provide password'
+    }
 }
 const register = ()=>{
+    email_register_inp.classList.remove('isBad')
+    password_register_inp.classList.remove('isBad')
+    username_register_inp.classList.remove('isBad')
+    repassword_register_input.classList.remove('isBad')
+    auth_alert_register_email.classList.remove('isActive')
+    auth_alert_register_password.classList.remove('isActive')
+    auth_alert_register_repassword.classList.remove('isActive')
+    auth_alert_register_username.classList.remove('isActive')
 
+    if(email_register_inp.value == '' ){
+        email_register_inp.classList.add('isBad')
+        auth_alert_register_email.classList.add('isActive')
+        auth_alert_register_email.innerHTML = 'please provide email'
+    }
+    if(password_register_inp.value == ''){
+        password_register_inp.classList.add('isBad')
+        auth_alert_register_password.classList.add('isActive')
+        auth_alert_register_password.innerHTML = 'please provide password'
+    }
+    if(repassword_register_input.value == ''){
+        repassword_register_input.classList.add('isBad')
+        auth_alert_register_repassword.classList.add('isActive')
+        auth_alert_register_repassword.innerHTML = 'please provide password'
+    }
+    if(username_register_inp.value == ''){
+        username_register_inp.classList.add('isBad')
+        auth_alert_register_username.classList.add('isActive')
+        auth_alert_register_username.innerHTML = 'please provide username'
+    }
 }
 const sendForgot = ()=>{
+    email_forgot_inp.classList.remove('isBad')
+    auth_alert_forgot_email.classList.remove('isActive')
+
+    if(email_forgot_inp.value == ''){
+        email_forgot_inp.classList.add('isBad')
+        auth_alert_forgot_email.classList.add('isActive')
+        auth_alert_forgot_email.innerHTML = 'please provide email'
+    }
 
 }
 
@@ -240,7 +305,9 @@ send_reset_btn.addEventListener('click', sendForgot)
 exit_btn1.addEventListener('click', closeAuth)
 exit_btn2.addEventListener('click', closeAuth)
 exit_btn3.addEventListener('click', closeAuth)
-
+loginL_btn.addEventListener('click', login)
+registerR_btn.addEventListener('click', register)
+send_reset_btn.addEventListener('click', sendForgot)
 
 ratiobar.addEventListener("input", function(){
     ratioVal.innerHTML = ratiobar.value

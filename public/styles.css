@@ -12,8 +12,10 @@ body{
     background-color: #2b1f3d;
     overscroll-behavior-y: contain;
     overscroll-behavior-x: none;
-
 } 
+::-webkit-scrollbar{
+    display:none;
+}
 
 /* navbar */
 .ghost_navbar{
@@ -557,7 +559,7 @@ para no joder la pag, como con ghost navbar */
     display: none;
     position: absolute;
     display: flex;
-    top:-700px;
+    top:-900px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -571,7 +573,7 @@ para no joder la pag, como con ghost navbar */
 }
 
 .auth_form_cont.isActive{
-    top: 100px;
+    top: 10vh;
     transition: 0.5s ease-in-out;
 }
 
@@ -607,6 +609,7 @@ para no joder la pag, como con ghost navbar */
     padding:2px;
     margin: 5px;
     background: #cecedb;
+
 }
 
 .auth_form_title{
@@ -614,19 +617,21 @@ para no joder la pag, como con ghost navbar */
     text-align: left;
     background: transparent;
     font-size: 40px;
-    margin-top: 0;
+    margin-top: -50px;
 }
 
 .subform_cont{
     display: flex;
+    background: transparent;
     width: 70%;
     flex-direction: column;
     justify-content: left;
-    margin: 10px;
+    margin: 0px;
 }
 
 .btn_row{
     display: flex;
+    background: transparent;
     flex-direction: row-reverse;
     justify-content: space-around;
 }
@@ -683,6 +688,24 @@ para no joder la pag, como con ghost navbar */
 
 .ghost_auth input.isBad{
     box-shadow: 0 0 15px #ff2c2cb1;
+}
+
+.auth_label{
+    background: transparent;
+}
+
+.auth_alert{
+    background: transparent;
+    font-size: 12px;
+    color: #ff2c2cb1;
+    display: flex;
+    align-items: center;
+    justify-items: left;
+    height: 0;
+    overflow: hidden;
+}
+.auth_alert.isActive{
+    height: 10px;
 }
 
 /* The typing effect */
@@ -813,5 +836,14 @@ para no joder la pag, como con ghost navbar */
     
     .auth_form_cont input{
         font-size: 18px;
+    }
+}
+@media screen and (max-height: 590px){
+    .auth_form_cont input{
+        font-size: 18px;
+    }
+    #sign_up_container.isActive{
+        bottom: -10px;
+        top:0vh;
     }
 }

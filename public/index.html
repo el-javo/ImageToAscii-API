@@ -25,11 +25,13 @@
                 </h1>
                 <div class="subform_cont">
                     <label for="email" class="auth_label">email</label>
-                    <input type="text" name="email" class="auth_input" placeholder="example@email.es">
+                    <input type="text" name="email" class="auth_input" id = 'emial_login_input' placeholder="example@email.es">
+                    <p class="auth_alert" id="auth_alert_login_email"></p>
                 </div>
                 <div class="subform_cont">
                     <label for="password" class="auth_label">password</label>
-                    <input type="password" name="password" class="auth_input" placeholder="ur_cat_name_123">
+                    <input type="password" name="password" class="auth_input" id="password_login_inp" placeholder="ur_cat_name_123">
+                    <p class="auth_alert" id="auth_alert_login_password"></p>
                 </div>
                 <div class="subform_cont">
                     <div class="btn_row">
@@ -53,19 +55,23 @@
                 </h1>
                 <div class="subform_cont">
                     <label for="email" class="auth_label">email</label>
-                    <input type="text" name="email" class="auth_input" placeholder="example@email.es">
+                    <input type="text" name="email" class="auth_input" id="email_register_input" placeholder="example@email.es">
+                    <p class="auth_alert" id="auth_alert_register_email"></p>
                 </div>
                 <div class="subform_cont">
                     <label for="user" class="auth_label">username</label>
-                    <input type="text" name="user" class="auth_input" placeholder="theGuy">
+                    <input type="text" name="user" class="auth_input" id="username_register_input" placeholder="theGuy">
+                    <p class="auth_alert" id="auth_alert_register_username"></p>
                 </div>
                 <div class="subform_cont">
                     <label for="password" class="auth_label">password</label>
-                    <input type="password" name="password" class="auth_input" placeholder="not-123456"><br>
+                    <input type="password" name="password" class="auth_input" id="password_register_input"  placeholder="not-123456">
+                    <p class="auth_alert" id="auth_alert_register_password"></p>
                 </div>
                 <div class="subform_cont">
                     <label for="password-re" class="auth_label">repeat password</label>
-                    <input type="password" name="password-re" class="auth_input" placeholder="not-123456-again">
+                    <input type="password" name="password-re" class="auth_input" id="repassword_register_input" placeholder="not-123456-again">
+                    <p class="auth_alert" id="auth_alert_register_repassword"></p>
                 </div>
                 <div class="subform_cont" id="register_btns">
                     <div class="btn_row">
@@ -86,8 +92,9 @@
                 </h1>
                 <div class="subform_cont">
                     <label for="email" class="auth_label">email</label>
-                    <input type="text" name="email" class="auth_input" placeholder="youremail@email.es">
-                </div>
+                    <input type="text" name="email" class="auth_input" id="email_forgot_input" placeholder="youremail@email.es">
+                    <p class="auth_alert" id="auth_alert_forgot_email"></p>
+            </div>
                 <div class="subform_cont">
                     <div class="btn_row">
                         <a class="auth_button_prim" id="send_reset_btn"><span class="insd_auth_btn">Send Mail</span></a>
